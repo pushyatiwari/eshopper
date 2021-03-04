@@ -37,3 +37,14 @@
     transform: rotate(360deg);
   }
 }
+.container{
+      display: flex;
+      flex-direction: row;
+  }
+  @media only screen and (max-width: 20rem) {
+      .rendercards{
+          flex-direction: column;
+          align-content: stretch;
+          flex-wrap: wrap;
+      }
+  }
