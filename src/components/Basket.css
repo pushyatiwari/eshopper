@@ -1,0 +1,13 @@
+.description{
+    background-color: rgb(202, 204, 204);
+    width: 60%;
+    align-items: center;
+    margin-bottom: 20%;
+}
+.basketItems{
+    width: 50%;
+    align-items: center;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-between;
+}
