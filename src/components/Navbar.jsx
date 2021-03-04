@@ -4,20 +4,18 @@
 import React from 'react';
 import './Navbar.css';
 
-function Navbar(props) {
-  return (
-    <header className="header">
-      <p>E-shopper</p>
-      <div className="navOrderDetails">
-        <span>All Orders</span>
-        <a href="/">
-          My Basket :
-          {props.cartCount}
-        </a>
-      </div>
-    </header>
-  );
-}
+const Navbar = (props) => (
+  <header className="header">
+    <p>E-shopper</p>
+    <div className="navOrderDetails">
+      <span>All Orders</span>
+      <a href="/">
+        My Basket :
+        {props.cartCount}
+      </a>
+    </div>
+  </header>
+);
 
 export default Navbar;
 // https://5.imimg.com/data5/EX/QK/MY-37427162/selection_008-500x500.png

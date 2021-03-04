@@ -7,28 +7,22 @@ import './Home.css';
 import PropTypes from 'prop-types';
 import Product from './Product';
 
-function RenderCards(onIncrement, onDecrement, description) {
-  return description.map((product) => (
-    <Product
-      key={product.id}
-      description={product}
-      onIncrement={() => onIncrement(product.id)}
-      onDecrement={() => onDecrement(product.id)}
-    />
-  ));
-}
+const RenderCards = (onIncrement, onDecrement, description) => description.map((product) => (
+  <Product
+    key={product.id}
+    description={product}
+    onIncrement={() => onIncrement(product.id)}
+    onDecrement={() => onDecrement(product.id)}
+  />
+));
 
-function Home({
-  onIncrement, onDecrement, description,
-}) {
-  return (
-    <div className="container">
-      <div className="rendercards">
-        {RenderCards(onIncrement, onDecrement, description)}
-      </div>
+const Home = ({ onIncrement, onDecrement, description }) => (
+  <div className="container">
+    <div className="rendercards">
+      {RenderCards(onIncrement, onDecrement, description)}
     </div>
-  );
-}
+  </div>
+);
 
 Home.propTypes = {
   description: PropTypes.objectOf(PropTypes.any).isRequired,

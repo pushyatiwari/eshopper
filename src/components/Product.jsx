@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Product.css';
 import Basket from './Basket';
 
-function Product({ description, onIncrement, onDecrement }) {
+const Product = ({ description, onIncrement, onDecrement }) => {
   console.log('descrp: ', description.src);
   return (
     <div className="productContainer">
@@ -23,7 +23,7 @@ function Product({ description, onIncrement, onDecrement }) {
       />
     </div>
   );
-}
+};
 
 Product.propTypes = {
   description: PropTypes.objectOf(PropTypes.any).isRequired,

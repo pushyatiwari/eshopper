@@ -4,21 +4,19 @@ import React from 'react';
 import './Basket.css';
 import PropTypes from 'prop-types';
 
-function Basket({ description, onIncrement, onDecrement }) {
-  return (
-    <div className="description">
-      <p>
-        MRP
-        {description.price}
-      </p>
-      <div className="basketItems">
-        <button onClick={onDecrement}>-</button>
-        {description.count}
-        <button onClick={onIncrement}>+</button>
-      </div>
+const Basket = ({ description, onIncrement, onDecrement }) => (
+  <div className="description">
+    <p>
+      MRP
+      {description.price}
+    </p>
+    <div className="basketItems">
+      <button onClick={onDecrement}>-</button>
+      {description.count}
+      <button onClick={onIncrement}>+</button>
     </div>
-  );
-}
+  </div>
+);
 
 Basket.propTypes = {
   description: PropTypes.objectOf(PropTypes.any).isRequired,

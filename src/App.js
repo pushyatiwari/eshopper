@@ -10,6 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: 'pushya',
       products: [
         {
           id: 'b1',
@@ -92,18 +93,22 @@ class App extends React.Component {
   }
 
   render() {
-    const { products, cartCount } = this.state;
-
+    const { products, cartCount, name } = this.state;
+    if (name) {
+      return (
+        <div className="container">
+          <Navbar cartCount={cartCount} />
+          <Home
+            description={products}
+            cartCount={cartCount}
+            onIncrement={this.onIncrement}
+            onDecrement={this.onDecrement}
+          />
+        </div>
+      );
+    }
     return (
-      <div className="container">
-        <Navbar cartCount={cartCount} />
-        <Home
-          description={products}
-          cartCount={cartCount}
-          onIncrement={this.onIncrement}
-          onDecrement={this.onDecrement}
-        />
-      </div>
+      <Navbar cartCount={cartCount} />
     );
   }
 }
