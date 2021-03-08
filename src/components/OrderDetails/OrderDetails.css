@@ -1,0 +1,16 @@
+.order-details-container{
+    flex: row;
+    
+}
+.upper-container-order-details{
+    flex: row;
+    padding-bottom: 0.1rem;
+}
+.order-items-header{
+    background-color: rgb(77, 68, 68);
+    color: white;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

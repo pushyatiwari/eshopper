@@ -5,7 +5,7 @@
 import React from 'react';
 import './Home.css';
 import PropTypes from 'prop-types';
-import Product from './Product';
+import Product from '../Product/Product';
 
 const RenderCards = (onIncrement, onDecrement, description) => description.map((product) => (
   <Product
@@ -24,13 +24,20 @@ const Home = ({ onIncrement, onDecrement, description }) => (
   </div>
 );
 
+const configShape = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  count: PropTypes.number,
+  src: PropTypes.string,
+};
 Home.propTypes = {
-  description: PropTypes.objectOf(PropTypes.any).isRequired,
+  description: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
 };
 RenderCards.propTypes = {
-  description: PropTypes.objectOf(PropTypes.any).isRequired,
+  description: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
   cartCount: PropTypes.number.isRequired,
 
 };

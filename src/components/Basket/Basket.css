@@ -1,0 +1,25 @@
+.description{
+    background-color: rgb(202, 204, 204);
+    width: 70%;
+    align-items: center;
+    padding: 0.2rem;
+}
+.basketItems{
+    width: 50%;
+    align-items: center;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .description{
+        width: 40%;
+        padding: 0.1rem;
+    }
+    .basketItems{
+        padding: 0rem;
+    }
+  
+  }

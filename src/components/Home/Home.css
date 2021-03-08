@@ -11,6 +11,5 @@ flex-wrap: wrap;
     .rendercards{
         flex-direction: column;
         align-content: stretch;
-        flex-wrap: wrap;
     }
 }

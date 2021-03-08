@@ -1,0 +1,15 @@
+.eachOrder{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(226, 226, 226);
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);}
+.allOrders{
+    margin:  2rem;
+}
+.basket-item{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(59, 53, 53);
+}

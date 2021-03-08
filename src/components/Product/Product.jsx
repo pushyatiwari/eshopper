@@ -2,14 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Product.css';
-import Basket from './Basket';
+import Basket from '../Basket/Basket';
 
 const Product = ({ description, onIncrement, onDecrement }) => {
   console.log('descrp: ', description.src);
   return (
     <div className="productContainer">
       <div className="product">
-        <img src={description.src} alt="" height="200" width="200" />
+        <img src={description.src} alt="" />
         <p className="productDescription">{description.name}</p>
         <p className="productDescription">
           1 kg
@@ -24,9 +24,24 @@ const Product = ({ description, onIncrement, onDecrement }) => {
     </div>
   );
 };
+// products: [
+//   {
+//     id: 'b1',
+//     name: 'Banana - Robusta',
+//     price: 40,
+//     count: 0,
+//     src: 'https://5.imimg.com/data5/EX/QK/MY-37427162/selection_008-500x500.png',
+//   },
+const configShape = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  count: PropTypes.number,
+  src: PropTypes.string,
+};
 
 Product.propTypes = {
-  description: PropTypes.objectOf(PropTypes.any).isRequired,
+  description: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
 

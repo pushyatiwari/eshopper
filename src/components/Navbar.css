@@ -1,9 +1,0 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.navOrderDetails{
-    display: flex;
-    align-content: flex-end;
-}

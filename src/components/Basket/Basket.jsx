@@ -1,5 +1,3 @@
-/* eslint-disable react/button-has-type */
-
 import React from 'react';
 import './Basket.css';
 import PropTypes from 'prop-types';
@@ -7,22 +5,28 @@ import PropTypes from 'prop-types';
 const Basket = ({ description, onIncrement, onDecrement }) => (
   <div className="description">
     <p>
-      MRP
+      MRP:
       {description.price}
     </p>
     <div className="basketItems">
-      <button onClick={onDecrement}>-</button>
+      <button onClick={onDecrement} type="button">-</button>
       {description.count}
-      <button onClick={onIncrement}>+</button>
+      <button onClick={onIncrement} type="button">+</button>
     </div>
   </div>
 );
 
+const configShape = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  count: PropTypes.number,
+  src: PropTypes.string,
+};
 Basket.propTypes = {
-  description: PropTypes.objectOf(PropTypes.any).isRequired,
+  description: PropTypes.objectOf(PropTypes.shape(configShape)).isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
-
 };
 
 export default Basket;

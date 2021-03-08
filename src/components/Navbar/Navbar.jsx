@@ -3,16 +3,23 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => (
   <header className="header">
-    <p>E-shopper</p>
-    <div className="navOrderDetails">
-      <span>All Orders</span>
-      <a href="/">
-        My Basket :
-        {props.cartCount}
-      </a>
+    <Link to="/" className="e-shopper">
+      <p>E-shopper</p>
+    </Link>
+    <div className="nav-order-details">
+      <Link to="/allorders">
+        <button>All Orders</button>
+      </Link>
+      <Link to="/cart">
+        <button>
+          My Basket :
+          {props.cartCount}
+        </button>
+      </Link>
     </div>
   </header>
 );
