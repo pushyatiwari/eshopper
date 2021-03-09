@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Product.css';
+import './Product.scss';
 import Basket from '../Basket/Basket';
 
 const Product = ({ description, onIncrement, onDecrement }) => {
@@ -9,7 +9,7 @@ const Product = ({ description, onIncrement, onDecrement }) => {
   return (
     <div className="productContainer">
       <div className="product">
-        <img src={description.src} alt="" />
+        <img src={description.src} alt="product" />
         <p className="productDescription">{description.name}</p>
         <p className="productDescription">
           1 kg
@@ -41,7 +41,7 @@ const configShape = {
 };
 
 Product.propTypes = {
-  description: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
+  description: PropTypes.shape(configShape).isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
 

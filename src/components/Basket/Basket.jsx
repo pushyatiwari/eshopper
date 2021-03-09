@@ -24,7 +24,7 @@ const configShape = {
   src: PropTypes.string,
 };
 Basket.propTypes = {
-  description: PropTypes.objectOf(PropTypes.shape(configShape)).isRequired,
+  description: PropTypes.shape(configShape).isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
 };

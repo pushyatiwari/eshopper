@@ -1,3 +1,5 @@
+@import '../../styles//index.scss';
+
 .rendercards{
 display: flex;
 align-content: stretch;
@@ -13,3 +15,9 @@ flex-wrap: wrap;
         align-content: stretch;
     }
 }
+.darkTheme{
+background-color: $theme-color-dark;
+}
+.lightTheme{
+    background-color: $theme-color-light;
+    }

@@ -1,0 +1,11 @@
+//colors
+$primary-background-color: rgb(195, 241, 234);
+$theme-color-dark: rgb(51, 51, 51);
+$theme-color-light: rgb(82, 125, 136);
+
+//breakpoints
+$largeMobile-breakpoint: 700px;
+
+@mixin custom-mixin {
+    background-color: rgb(156, 148, 163);
+}

@@ -1,11 +1,8 @@
-/* eslint-disable no-console */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable no-use-before-define */
-import React from 'react';
-import './Home.css';
+import React, { useContext } from 'react';
+import './Home.scss';
 import PropTypes from 'prop-types';
 import Product from '../Product/Product';
+import { ThemeContext } from '../../themeContext';
 
 const RenderCards = (onIncrement, onDecrement, description) => description.map((product) => (
   <Product
@@ -16,13 +13,16 @@ const RenderCards = (onIncrement, onDecrement, description) => description.map((
   />
 ));
 
-const Home = ({ onIncrement, onDecrement, description }) => (
-  <div className="container">
-    <div className="rendercards">
-      {RenderCards(onIncrement, onDecrement, description)}
+const Home = ({ onIncrement, onDecrement, description }) => {
+  const theme = useContext(ThemeContext);
+  return (
+    <div className={theme === 'dark' ? 'darkTheme container' : 'whiteTheme container'}>
+      <div className="rendercards">
+        {RenderCards(onIncrement, onDecrement, description)}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const configShape = {
   id: PropTypes.string,
