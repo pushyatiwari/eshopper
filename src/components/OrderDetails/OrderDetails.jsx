@@ -37,13 +37,15 @@ const OrderDetails = ({ orders }) => {
       <div className="order-details-container">
         <div className="upper-container-order-details">
           <table>
-            <tr className="order-items-header">
-              <td>ORDER</td>
-              <td>ITEMS </td>
-              <td>DATE</td>
-              <td>AMOUNT</td>
-            </tr>
-            {eachOrder}
+            <tbody>
+              <tr className="order-items-header">
+                <td>ORDER</td>
+                <td>ITEMS </td>
+                <td>DATE</td>
+                <td>AMOUNT</td>
+              </tr>
+              {eachOrder}
+            </tbody>
           </table>
         </div>
       </div>
@@ -59,6 +61,6 @@ const configShape = {
   src: PropTypes.string,
 };
 OrderDetails.propTypes = {
-  orders: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
+  orders: PropTypes.shape(configShape).isRequired,
 };
 export default OrderDetails;

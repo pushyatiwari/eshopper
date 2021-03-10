@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable react/react-in-jsx-scope */
 import './App.css';
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
@@ -10,72 +12,43 @@ import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import AllOrders from './components/AllOrders/AllOrders';
 import { ThemeContext } from './themeContext';
-import allProduct from './constants/allProducts';
-import allOrder from './constants/orders';
-
+import { allProduct } from './constants/allProducts';
+import { allOrder } from './constants/orders';
+import groupByCategory from './utils/groupByCategory';
 // import Counter from './components/Counter/Counter';
 
 const App = () => {
-  // const [orders, setOrder] = useState([
-  //   {
-  //     orderId: 'o1',
-  //     items: 12,
-  //     orderDate: '12-12-2020',
-  //     amount: 560.00,
-  //     products: [
-  //       {
-  //         id: 'b1',
-  //         name: 'Banana - Robusta',
-  //         price: 40,
-  //         count: 1,
-  //       },
-  //       {
-  //         id: 'b2',
-  //         name: 'melon',
-  //         price: 40,
-  //         count: 2,
-
-  //       },
-  //       {
-  //         id: 'b3',
-  //         name: 'apple',
-  //         price: 40,
-  //         count: 3,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     orderId: 'o2',
-  //     items: 12,
-  //     orderDate: '12-12-2020',
-  //     amount: 560.00,
-  //     products: [
-  //       {
-  //         id: 'b1',
-  //         name: 'Banana - Robusta',
-  //         price: 40,
-  //         count: 1,
-  //       },
-  //       {
-  //         id: 'b2',
-  //         name: 'melon',
-  //         price: 40,
-  //         count: 2,
-
-  //       },
-  //       {
-  //         id: 'b3',
-  //         name: 'apple',
-  //         price: 40,
-  //         count: 3,
-  //       },
-  //     ],
-  //   }]);
   const [products, setProduct] = useState(allProduct);
   const [cartCount, setCartCount] = useState(0);
   const [theme, toggleTheme] = useState('light');
-
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  // .then(res => res.json())
+  // .then(
+  //   (result) => {
+  //     setIsLoaded(true);
+  //     setItems(result);
+  //   },
+  //   // Note: it's important to handle errors here
+  //   // instead of a catch() block so that we don't swallow
+  //   // exceptions from actual bugs in components.
+  //   (error) => {
+  //     setIsLoaded(true);
+  //     setError(error);
+  //   }
+  // )
   const [orders] = useState(allOrder);
+  useEffect(async () => {
+    try {
+      const items = await axios.get('/items');
+      setIsLoaded(true);
+      setProduct(items);
+    } catch (err) {
+      setIsLoaded(true);
+      setError(err);
+    }
+  }, []);
+  groupByCategory(products);
   const onIncrement = (id) => {
     setProduct(products.map((product) => {
       if (product.id === id) {
@@ -85,7 +58,6 @@ const App = () => {
     }));
     setCartCount(cartCount + 1);
   };
-
   const onDecrement = (id) => {
     if (cartCount <= 0) {
       return;

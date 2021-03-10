@@ -2,8 +2,7 @@ import React from 'react';
 import './ItemDetails.css';
 import PropTypes from 'prop-types';
 
-// orders: [
-//     {
+// orders: {
 //       orderId: 'o1',
 //       items: 12,
 //       orderDate: '12-12-2020',
@@ -18,7 +17,7 @@ import PropTypes from 'prop-types';
 
 const orderedItems = (products) => {
   const allOrderedItems = products.map((item) => (
-    <tr className="item-details">
+    <tr className="item-details" key={item.id}>
       <td>{item.name}</td>
       <td />
       <td>
@@ -36,28 +35,29 @@ const orderedItems = (products) => {
 };
 
 const ItemDetails = ({ items }) => {
-  console.log('all items details:  ', items.products);
   const allItems = orderedItems(items.products);
   return (
     <>
       <div className="container">
         <div className="upper-container">
           <table>
-            <tr className="orderitems-header">
-              <td>ITEM DESCRIPTION</td>
-              <td />
-              <td>UNIT PRICE </td>
-              <td>QUANTITY</td>
-              <td>SUBTOTAL</td>
-            </tr>
-            <tr className="item-category">
-              <td>FRUITS AND VEGETABLES</td>
-              <td />
-              <td />
-              <td />
-              <td />
-            </tr>
-            {allItems}
+            <tbody>
+              <tr className="orderitems-header">
+                <td>ITEM DESCRIPTION</td>
+                <td />
+                <td>UNIT PRICE </td>
+                <td>QUANTITY</td>
+                <td>SUBTOTAL</td>
+              </tr>
+              <tr className="item-category">
+                <td>FRUITS AND VEGETABLES</td>
+                <td />
+                <td />
+                <td />
+                <td />
+              </tr>
+              {allItems}
+            </tbody>
           </table>
         </div>
       </div>
@@ -72,6 +72,6 @@ const configShape = {
   count: PropTypes.number,
 };
 ItemDetails.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
+  items: PropTypes.shape(configShape).isRequired,
 };
 export default ItemDetails;

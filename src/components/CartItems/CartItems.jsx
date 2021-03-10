@@ -8,7 +8,7 @@ const cart = (description) => {
     if (product.count > 0) {
       const subTotal = product.price * product.count;
       return (
-        <tr>
+        <tr key={product.id}>
           <td>{product.name}</td>
           <td>
             Rs.
@@ -21,6 +21,7 @@ const cart = (description) => {
     }
     return 0;
   });
+
   const filteredItems = items.filter((item) => item !== 0);
   return filteredItems;
 };
@@ -46,20 +47,21 @@ const CartItems = ({ description }) => {
         <div className="basket-container">
           <div className="upper-container">
             <table>
-              <tr className="cartitems-header">
-                <td>ITEM DESCRIPTION</td>
-                <td>UNIT PRICE</td>
-                <td>QUANTITY</td>
-                <td>SUBTOTAL</td>
-              </tr>
-              <tr className="cartitem-category">
-                <td>Fruits and Vegatables</td>
-                <td />
-                <td />
-                <td />
-              </tr>
-              {cartItems}
-
+              <tbody>
+                <tr className="cartitems-header">
+                  <td>ITEM DESCRIPTION</td>
+                  <td>UNIT PRICE</td>
+                  <td>QUANTITY</td>
+                  <td>SUBTOTAL</td>
+                </tr>
+                <tr className="cartitem-category">
+                  <td>Fruits and Vegatables</td>
+                  <td />
+                  <td />
+                  <td />
+                </tr>
+                {cartItems}
+              </tbody>
             </table>
           </div>
           <div className="bottom-part">

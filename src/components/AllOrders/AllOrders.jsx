@@ -17,9 +17,10 @@ import ItemDetails from '../ItemDetails/ItemDetails';
 //           price: 40,
 //           count: 1,
 //         },
+
 const renderOrders = (orders) => {
   const renderAllOrders = orders.map((order) => (
-    <div className="eachOrder">
+    <div className="eachOrder" key={order.orderId}>
       <OrderDetails orders={order} />
       <ItemDetails items={order} />
       <p />
@@ -27,6 +28,7 @@ const renderOrders = (orders) => {
   ));
   return renderAllOrders;
 };
+
 const AllOrders = ({ orders }) => {
   const allOrders = renderOrders(orders);
   return (
@@ -45,11 +47,11 @@ const AllOrders = ({ orders }) => {
 };
 
 const configShape = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  count: PropTypes.number,
-  src: PropTypes.string,
+  orderId: PropTypes.string,
+  items: PropTypes.number,
+  orderDate: PropTypes.string,
+  amount: PropTypes.number,
+  products: PropTypes.any,
 };
 AllOrders.propTypes = {
   orders: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,

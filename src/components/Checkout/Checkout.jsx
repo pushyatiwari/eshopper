@@ -52,7 +52,7 @@ const Checkout = () => {
           <div className="form-element">
             <p>NAME:</p>
             {' '}
-            <input type="text" name="formname" aria-describedby="name-format" required aria-required="true" onChange={handleChange} value={formname} pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" />
+            <input data-testid="input-name" type="text" name="formname" aria-describedby="name-format" required aria-required="true" onChange={handleChange} value={formname} pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" />
             <br />
           </div>
           <div className="form-element">
