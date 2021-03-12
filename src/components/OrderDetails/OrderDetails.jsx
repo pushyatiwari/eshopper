@@ -1,36 +1,32 @@
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './OrderDetails.css';
-// orders: [
-//   {
-//     orderId: 'o1',
-//     items: 12,
-//     orderDate: '12-12-2020',
-//     amount: 560.00,
-//     products: [
-//       {
-//         id: 'b1',
-//         name: 'Banana - Robusta',
-//         price: 40,
-//         count: 1,
-//       },
+
 const eachOrderedDetails = (order) => (
   <tr>
     <td>
       Order id:
-      {order.orderId}
+      {order.id}
     </td>
     <td>
-      {order.items}
+      {Object.keys(order.items).length}
       {' '}
       items
     </td>
-    <td>{order.orderDate}</td>
-    <td>{order.amount}</td>
+    <td>{new Date(order.date).toDateString()}</td>
+    <td>700</td>
   </tr>
 );
+// {"items":{"Fruits & Vegatables":[{"id":1,"name":"apple","price":120,"count":1,"category":"Fruits & Vegatables"}]},"id":1,"date":1615122360481}
+
 const OrderDetails = ({ orders }) => {
-  // console.log('orderDetails: ', JSON.stringify(orders));
+  console.log('orderDetails: ', JSON.stringify(orders));
+  console.log(`orders  items: ${orders.items}`);
+  // return (
+  //   <h1>{JSON.stringify(orders)}</h1>
+  // );
   const eachOrder = eachOrderedDetails(orders);
   return (
     <>
@@ -54,11 +50,9 @@ const OrderDetails = ({ orders }) => {
 };
 
 const configShape = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  count: PropTypes.number,
-  src: PropTypes.string,
+  item: PropTypes.shape(PropTypes.any),
+  id: PropTypes.number,
+  date: PropTypes.date,
 };
 OrderDetails.propTypes = {
   orders: PropTypes.shape(configShape).isRequired,

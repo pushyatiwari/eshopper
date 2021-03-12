@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cart should be called with 1`] = `
+exports[`CartItems should be called with 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

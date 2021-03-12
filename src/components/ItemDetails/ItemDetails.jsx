@@ -1,60 +1,71 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 import React from 'react';
 import './ItemDetails.css';
 import PropTypes from 'prop-types';
 
-// orders: {
-//       orderId: 'o1',
-//       items: 12,
-//       orderDate: '12-12-2020',
-//       amount: 560.00,
-//       products: [
-//         {
-//           id: 'b1',
-//           name: 'Banana - Robusta',
-//           price: 40,
-//           count: 1,
-//         },
+// {
+// "items":
+//     {"Fruits & Vegatables":[{"id":1,"name":"apple","price":120,"count":1,"category":"Fruits & Vegatables"}]},
+//     "id":1,
+//     "date":1615122360481}
 
 const orderedItems = (products) => {
-  const allOrderedItems = products.map((item) => (
-    <tr className="item-details" key={item.id}>
-      <td>{item.name}</td>
-      <td />
-      <td>
-        Rs.
-        {item.price}
-      </td>
-      <td>{item.count}</td>
-      <td>
-        Rs.
-        {item.price * item.count}
-      </td>
-    </tr>
-  ));
-  return allOrderedItems;
+  const orderItems = [];
+  console.log('Itemproducts: ', Object.keys(products));
+  Object.keys(products.items).map((item) => {
+    orderItems.push(
+      <React.Fragment key={item}>
+        <tr className="item-category" key="category">
+          <td>{item}</td>
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+      </React.Fragment>,
+    );
+    products.items[item].map((eachI) => {
+      orderItems.push((
+        <React.Fragment key={eachI.id}>
+
+          <tr className="item-details">
+            <td>{eachI.name}</td>
+            <td />
+            <td>
+              Rs.
+              {eachI.price}
+            </td>
+            <td>{eachI.count}</td>
+            <td>
+              Rs.
+              {eachI.price * eachI.count}
+            </td>
+          </tr>
+        </React.Fragment>
+      ));
+    });
+  });
+  console.log(`order: ${orderItems}`);
+  return orderItems;
 };
 
 const ItemDetails = ({ items }) => {
-  const allItems = orderedItems(items.products);
+  console.log('in items:  ', items);
+  const allItems = orderedItems(items);
   return (
     <>
       <div className="container">
         <div className="upper-container">
           <table>
             <tbody>
-              <tr className="orderitems-header">
+              <tr className="orderitems-header" key="header">
                 <td>ITEM DESCRIPTION</td>
                 <td />
                 <td>UNIT PRICE </td>
                 <td>QUANTITY</td>
                 <td>SUBTOTAL</td>
-              </tr>
-              <tr className="item-category">
-                <td>FRUITS AND VEGETABLES</td>
-                <td />
-                <td />
-                <td />
-                <td />
               </tr>
               {allItems}
             </tbody>
@@ -66,12 +77,12 @@ const ItemDetails = ({ items }) => {
 };
 
 const configShape = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  count: PropTypes.number,
+  item: PropTypes.shape(PropTypes.any),
+  id: PropTypes.number,
+  date: PropTypes.date,
 };
 ItemDetails.propTypes = {
   items: PropTypes.shape(configShape).isRequired,
+
 };
 export default ItemDetails;

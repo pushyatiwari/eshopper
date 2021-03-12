@@ -28,4 +28,12 @@ describe(Basket.name, () => {
     fireEvent.click(onIncrementButton);
     expect(mockFunction.onIncrement).toHaveBeenCalled();
   });
+  test('should be called with', () => {
+    const basketContainer = render(<Basket
+      description={description}
+      onIncrement={mockFunction.onIncrement}
+      onDecrement={mockFunction.onDecrement}
+    />);
+    expect(basketContainer).toMatchSnapshot();
+  });
 });

@@ -10,7 +10,7 @@ const Basket = ({ description, onIncrement, onDecrement }) => (
     </p>
     <div className="basketItems">
       <button onClick={onDecrement} type="button">-</button>
-      {description.count}
+      {description.countInCart}
       <button onClick={onIncrement} type="button">+</button>
     </div>
   </div>

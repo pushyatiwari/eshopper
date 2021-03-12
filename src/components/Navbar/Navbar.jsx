@@ -17,7 +17,7 @@ const Navbar = ({ cartCount }) => {
         <Link to="/allorders">
           <button className="nav-buttons">All Orders</button>
         </Link>
-        <Link to="/cart">
+        <Link to="/cart" data-testid="cart-test">
           <button className={theme === 'dark' ? 'darkTheme nav-buttons' : 'whiteTheme nav-buttons'}>
             My Basket :
             {cartCount}

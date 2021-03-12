@@ -1,15 +1,16 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 // import * as EmailValidator from 'email-validator';
 import './Checkout.css';
 
-const Checkout = () => {
+const Checkout = ({ checkout }) => {
   const [formname, setName] = useState('');
   const [formemail, setEmail] = useState('');
   const [formaddress, setAddress] = useState('');
   const [formphone, setPhone] = useState('');
-
+  const [isOrdered, setisOrdered] = useState(false);
   const handleChange = (event) => {
     const { name, value } = event.target;
     // this.setState({ [name]: value });
@@ -18,31 +19,15 @@ const Checkout = () => {
     if (name === 'formaddress') setAddress(value);
     if (name === 'formphone') setPhone(value);
   };
-  // if (name === 'name') {
-  //   this.setState((prevState) => ({ ...prevState, name: value }));
-  // }
-  // if (name === 'email') {
-  //   this.setState((prevState) => ({ ...prevState, email: value }));
-  // }
-  // if (name === 'address') {
-  //   this.setState((prevState) => ({ ...prevState, address: value }));
-  // }
-  // if (name === 'phone') {
-  //   this.setState((prevState) => ({ ...prevState, phone: value }));
-  // }
-  // }
-
-  // let emailValidate = false;
-  // if (EmailValidator.validate(email)) {
-  //   console.log('true email');
-  //   emailValidate = true;
-  // }
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(formname);
-    console.log(formemail);
-    console.log(formaddress);
-    console.log(formphone);
+    checkout();
+    setisOrdered(true);
+    console.log('order placed');
+    // console.log(formname);
+    // console.log(formemail);
+    // console.log(formaddress);
+    // console.log(formphone);
   };
 
   return (
@@ -57,17 +42,18 @@ const Checkout = () => {
           </div>
           <div className="form-element">
             <p>EMAIL:</p>
-            <input type="email" id="formemail" name="formemail" required onChange={handleChange} value={formemail} />
+            <input data-testid="input-email" type="email" id="formemail" name="formemail" required onChange={handleChange} value={formemail} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
             <br />
           </div>
           <div className="form-element">
             <p>ADDRESS:</p>
-            <input type="text" name="formaddress" onChange={handleChange} value={formaddress} />
+            <input data-testid="input-address" type="text" name="formaddress" onChange={handleChange} value={formaddress} />
             <br />
           </div>
           <div className="form-element">
             <p>PHONE:</p>
             <input
+              data-testid="input-phone"
               type="text"
               name="formphone"
               onChange={handleChange}
@@ -80,6 +66,7 @@ const Checkout = () => {
           <button type="submit">Checkout</button>
         </form>
       </div>
+      <h1 className={isOrdered ? 'order-placed' : 'order-not-placed'}>Your Order is placed successfully!</h1>
     </>
   );
 };

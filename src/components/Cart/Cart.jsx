@@ -7,14 +7,7 @@ const Cart = ({ description }) => (
   <CartItems description={description} />
 );
 
-const configShape = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  count: PropTypes.number,
-  src: PropTypes.string,
-};
 Cart.propTypes = {
-  description: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
+  description: PropTypes.shape(PropTypes.any).isRequired,
 };
 export default Cart;

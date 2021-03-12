@@ -4,26 +4,24 @@ import PropTypes from 'prop-types';
 import './Product.scss';
 import Basket from '../Basket/Basket';
 
-const Product = ({ description, onIncrement, onDecrement }) => {
-  console.log('descrp: ', description.src);
-  return (
-    <div className="productContainer">
-      <div className="product">
-        <img src={description.src} alt="product" />
-        <p className="productDescription">{description.name}</p>
-        <p className="productDescription">
-          1 kg
-        </p>
-      </div>
-      <Basket
-        price={40}
-        description={description}
-        onIncrement={onIncrement}
-        onDecrement={onDecrement}
-      />
+const Product = ({ description, onIncrement, onDecrement }) => (
+  <div className="productContainer">
+    <div className="product">
+      <p>{description.category}</p>
+      <img src={description.src} alt="product" />
+      <p className="productDescription">{description.name}</p>
+      <p className="productDescription">
+        1 kg
+      </p>
     </div>
-  );
-};
+    <Basket
+      price={40}
+      description={description}
+      onIncrement={onIncrement}
+      onDecrement={onDecrement}
+    />
+  </div>
+);
 // products: [
 //   {
 //     id: 'b1',

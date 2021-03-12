@@ -6,23 +6,27 @@ import ItemDetails from './ItemDetails';
 
 describe(ItemDetails.name, () => {
   const mockDescription = {
-    orderId: 'o1',
-    items: 12,
-    orderDate: '12-12-2020',
-    amount: 560.00,
-    products: [
-      {
-        id: 'b1',
-        name: 'Banana - Robusta',
-        price: 40,
-        count: 1,
-      }],
+    items:
+            {
+              'Fruits & Vegatables': [{
+                id: 1, name: 'apple', price: 120, count: 1, category: 'Fruits & Vegatables',
+              }],
+            },
+    id: 1,
+    date: 1615122360481,
   };
+
   test('should be called with', () => {
     render(<ItemDetails
       items={mockDescription}
     />);
-    const itemDetails = screen.getByText('FRUITS AND VEGETABLES');
+    const itemDetails = screen.getByText('Fruits & Vegatables');
     expect(itemDetails.tagName).toBe('TD');
+  });
+  test('should be called with', () => {
+    const itemDetailsContainer = render(<ItemDetails
+      items={mockDescription}
+    />);
+    expect(itemDetailsContainer).toMatchSnapshot();
   });
 });

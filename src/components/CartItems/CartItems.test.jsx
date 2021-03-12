@@ -6,14 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 import CartItems from './CartItems';
 
 describe(CartItems.name, () => {
-  const description = [{
-    id: 'b2',
-    name: 'melon',
-    price: 40,
-    count: 0,
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRhOqYV2NWv0m80WzwGG2fCz6c3PzHmpz1Dg&usqp=CAU',
-
-  }];
+  const description = {
+    'Fruits and Vegetables': [{
+      id: 1, name: 'apple', price: 120, count: 18, category: 'Fruits & Vegatables', countInCart: 2, src: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    }],
+  };
   test('should be return TD', () => {
     render(
       <BrowserRouter>
@@ -24,5 +21,16 @@ describe(CartItems.name, () => {
     );
     const cartItems = screen.getByText('ITEM DESCRIPTION');
     expect(cartItems.tagName).toBe('TD');
+  });
+  test('should be called with', () => {
+    const cartItemsContainer = render(
+      <BrowserRouter>
+        <CartItems
+          description={description}
+        />
+      </BrowserRouter>,
+    );
+    screen.logTestingPlaygroundURL();
+    expect(cartItemsContainer).toMatchSnapshot();
   });
 });

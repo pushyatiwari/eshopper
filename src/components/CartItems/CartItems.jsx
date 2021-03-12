@@ -1,39 +1,55 @@
+/* eslint-disable array-callback-return */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './CartItems.css';
 import { Link } from 'react-router-dom';
+// keys[0] = "fruitandveg"
 
 const cart = (description) => {
-  const items = description.map((product) => {
-    if (product.count > 0) {
-      const subTotal = product.price * product.count;
-      return (
-        <tr key={product.id}>
-          <td>{product.name}</td>
-          <td>
-            Rs.
-            {product.price}
-          </td>
-          <td>{product.count}</td>
-          <td>{subTotal}</td>
-        </tr>
-      );
-    }
-    return 0;
-  });
+  const newArray = [];
+  Object.keys(description).map((category) => (
+    description[category].map((product) => {
+      if (product.countInCart > 0) {
+        const subTotal = product.price * product.countInCart;
+        newArray.push((
+          <>
+            <tr key={product.id}>
+              <td>{product.name}</td>
+              <td>
+                Rs.
+                {product.price}
+              </td>
+              <td>{product.countInCart}</td>
+              <td>{subTotal}</td>
+            </tr>
+          </>
+        ));
+      }
+    })));
 
-  const filteredItems = items.filter((item) => item !== 0);
-  return filteredItems;
+  return newArray;
 };
+
 const calculateTotal = (description) => {
-  const total = description.reduce((accumulator, product) => {
-    const subTotal = product.price * product.count;
-    return accumulator + subTotal;
-  }, 0);
-  return total;
+  Object.keys(description).map((category) => (
+    description[category].reduce((accumulator, product) => {
+      const subTotal = product.price * product.countInCart;
+      return accumulator + subTotal;
+    }, 0)
+  ));
 };
+
+// const total = description.reduce((accumulator, product) => {
+//   const subTotal = product.price * product.countInCart;
+//   return accumulator + subTotal;
+// }, 0);
+// return total;
+// };
+
 const CartItems = ({ description }) => {
   const cartItems = cart(description);
+  // console.log(cartItems);
+  // console.log(`desc:${JSON.stringify(description)}`);
   const total = calculateTotal(description);
   return (
     <>
@@ -86,15 +102,9 @@ const CartItems = ({ description }) => {
     </>
   );
 };
+// desc:{"Fruits & Vegatables":[{"id":1,"name":"apple","price":120,"count":18,"category":"Fruits & Vegatables","countInCart":2,"src":"https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"},
 
-const configShape = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  count: PropTypes.number,
-  src: PropTypes.string,
-};
 CartItems.propTypes = {
-  description: PropTypes.arrayOf(PropTypes.shape(configShape)).isRequired,
+  description: PropTypes.shape(PropTypes.any).isRequired,
 };
 export default CartItems;

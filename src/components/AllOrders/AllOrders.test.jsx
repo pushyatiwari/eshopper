@@ -3,33 +3,18 @@ import React from 'react';
 import AllOrders from './AllOrders';
 
 describe(AllOrders.name, () => {
-  const mockOrders = [
-    {
-      orderId: 'o1',
-      items: 12,
-      orderDate: '12-12-2020',
-      amount: 560.00,
-      products: [
-        {
-          id: 'b1',
-          name: 'Banana - Robusta',
-          price: 40,
-          count: 1,
-        },
-        {
-          id: 'b2',
-          name: 'melon',
-          price: 40,
-          count: 2,
-        },
-        {
-          id: 'b3',
-          name: 'apple',
-          price: 40,
-          count: 3,
-        },
-      ],
-    }];
+  const mockOrders = [{
+    items:
+            {
+              'Fruits & Vegatables': [{
+                id: 1, name: 'apple', price: 120, count: 1, category: 'Fruits & Vegatables',
+              }],
+            },
+    id: 1,
+    date: 1615122360481,
+  },
+
+  ];
   test('should display all orders', () => {
     render(<AllOrders orders={mockOrders} />);
     const navbarElement = screen.getByText('ALL ORDERS');
@@ -39,5 +24,11 @@ describe(AllOrders.name, () => {
     render(<AllOrders orders={mockOrders} />);
     const navbarElement = screen.getByText(`Past Orders(${mockOrders.length})`);
     expect(navbarElement.tagName).toBe('P');
+  });
+  test('should be called with', () => {
+    const allOrdersContainer = render(
+      <AllOrders orders={mockOrders} />,
+    );
+    expect(allOrdersContainer).toMatchSnapshot();
   });
 });
