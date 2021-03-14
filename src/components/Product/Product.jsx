@@ -5,7 +5,7 @@ import './Product.scss';
 import Basket from '../Basket/Basket';
 
 const Product = ({ description, onIncrement, onDecrement }) => (
-  <div className="productContainer">
+  <div className="productContainer" data-testid="product">
     <div className="product">
       <p>{description.category}</p>
       <img src={description.src} alt="product" />
@@ -31,7 +31,7 @@ const Product = ({ description, onIncrement, onDecrement }) => (
 //     src: 'https://5.imimg.com/data5/EX/QK/MY-37427162/selection_008-500x500.png',
 //   },
 const configShape = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   count: PropTypes.number,

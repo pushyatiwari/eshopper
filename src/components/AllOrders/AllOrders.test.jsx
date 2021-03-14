@@ -4,17 +4,14 @@ import AllOrders from './AllOrders';
 
 describe(AllOrders.name, () => {
   const mockOrders = [{
-    items:
-            {
-              'Fruits & Vegatables': [{
-                id: 1, name: 'apple', price: 120, count: 1, category: 'Fruits & Vegatables',
-              }],
-            },
-    id: 1,
     date: 1615122360481,
-  },
-
-  ];
+    id: 1,
+    items: {
+      'Fruits & Vegatables': [{
+        category: 'Fruits & Vegatables', count: 1, id: 1, name: 'apple', price: 120,
+      }],
+    },
+  }];
   test('should display all orders', () => {
     render(<AllOrders orders={mockOrders} />);
     const navbarElement = screen.getByText('ALL ORDERS');

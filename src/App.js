@@ -18,7 +18,7 @@ const App = () => {
   const [theme, toggleTheme] = useState('light');
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [orders, setOrders] = useState({});
+  const [orders, setOrders] = useState([]);
 
   const onCheckout = async () => {
     const checkoutItems = { items: [] };
@@ -40,7 +40,6 @@ const App = () => {
       setIsLoaded(true);
       const groupedOrders = groupOrderByCategory(allorders);
       setOrders(groupedOrders);
-      console.log(`posted items are: ${items}`);
     } catch (err) {
       console.log('error: ', err.message);
     }
@@ -88,17 +87,17 @@ const App = () => {
       return;
     }
     const modifiedProductCount = groupProducts[category].map((product) => {
-      if (product.id === id && product.countInCart >= 0) {
+      if (product.id === id && product.countInCart > 0) {
         const newProductCount = product.count + 1;
         const newProductCartCount = product.countInCart - 1;
         const newProduct = { ...product, count: newProductCount, countInCart: newProductCartCount };
+        setCartCount(cartCount - 1);
         return newProduct;
       }
       return product;
     });
     groupProducts[category] = modifiedProductCount;
     setGroupProduct({ ...groupProducts });
-    setCartCount(cartCount - 1);
   };
 
   return (

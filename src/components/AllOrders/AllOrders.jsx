@@ -28,7 +28,7 @@ const renderOrders = (orders) => {
 // {"items":
 // {"Household Items":[{"id":2,"name":"table cloth","price":200,"count":1,"category":"Household Items"},{"id":9,"name":"broom","price":250,"count":1,"category":"Household Items"}]},"id":2,"date":1615122649963},{"items":{"Fruits & Vegatables":[{"id":1,"name":"apple","price":120,"count":1,"category":"Fruits & Vegatables"}],"Household Items":[{"id":2,"name":"table cloth","price":200,"count":1,"category":"Household Items"},{"id":9,"name":"broom","price":250,"count":1,"category":"Household Items"}],"Dairy & Eggs":[{"id":8,"name":"curd","price":20,"count":2,"category":"Dairy & Eggs"}]},"id":3,"date":1615122664245},{"items":{"Household Items":[{"id":4,"name":"duster","price":80,"count":1,"category":"Household Items"}],"Dairy & Eggs":[{"id":5,"name":"milk","price":10,"count":2,"category":"Dairy & Eggs"},{"id":6,"name":"butter","price":20,"count":2,"category":"Dairy & Eggs"}]},"id":4,"date":1615122763596}]
 const AllOrders = ({ orders }) => {
-  // console.log(`all orders: ${JSON.stringify(orders)}`);
+  console.log(`all orders: ${JSON.stringify(orders)}`);
   const allOrders = renderOrders(orders);
   return (
     <div className="allOrders">
@@ -46,7 +46,7 @@ const AllOrders = ({ orders }) => {
 };
 
 const configShape = {
-  items: PropTypes.shape(PropTypes.any),
+  items: PropTypes.objectOf(PropTypes.array),
   id: PropTypes.number,
   date: PropTypes.date,
 };

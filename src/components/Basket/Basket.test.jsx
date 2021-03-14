@@ -11,7 +11,7 @@ describe(Basket.name, () => {
     onDecrement: jest.fn(),
   };
   const description = {
-    id: 'b2',
+    id: 1,
     name: 'melon',
     price: 40,
     count: 0,

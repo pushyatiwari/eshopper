@@ -17,7 +17,7 @@ const Basket = ({ description, onIncrement, onDecrement }) => (
 );
 
 const configShape = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   count: PropTypes.number,

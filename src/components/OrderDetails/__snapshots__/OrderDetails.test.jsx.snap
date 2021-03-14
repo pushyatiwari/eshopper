@@ -1,85 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar should be called with 1`] = `
+exports[`OrderDetails should render Order Details 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header
-        class="whiteTheme header"
+      <div
+        class="order-details-container"
       >
-        <a
-          class="e-shopper"
-          href="/"
-        >
-          <p>
-            E-shopper
-          </p>
-        </a>
         <div
-          class="nav-order-details"
+          class="upper-container-order-details"
         >
-          <a
-            href="/allorders"
-          >
-            <button
-              class="nav-buttons"
-            >
-              All Orders
-            </button>
-          </a>
-          <a
-            data-testid="cart-test-nav"
-            href="/cart"
-          >
-            <button
-              class="whiteTheme nav-buttons"
-            >
-              My Basket :
-              2
-            </button>
-          </a>
+          <table>
+            <tbody>
+              <tr
+                class="order-items-header"
+              >
+                <td>
+                  ORDER
+                </td>
+                <td>
+                  ITEMS 
+                </td>
+                <td>
+                  DATE
+                </td>
+                <td>
+                  AMOUNT
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Order id:
+                  1
+                </td>
+                <td>
+                  1
+                   
+                  items
+                </td>
+                <td>
+                  Sun Mar 07 2021
+                </td>
+                <td>
+                  700
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </header>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <header
-      class="whiteTheme header"
+    <div
+      class="order-details-container"
     >
-      <a
-        class="e-shopper"
-        href="/"
-      >
-        <p>
-          E-shopper
-        </p>
-      </a>
       <div
-        class="nav-order-details"
+        class="upper-container-order-details"
       >
-        <a
-          href="/allorders"
-        >
-          <button
-            class="nav-buttons"
-          >
-            All Orders
-          </button>
-        </a>
-        <a
-          data-testid="cart-test-nav"
-          href="/cart"
-        >
-          <button
-            class="whiteTheme nav-buttons"
-          >
-            My Basket :
-            2
-          </button>
-        </a>
+        <table>
+          <tbody>
+            <tr
+              class="order-items-header"
+            >
+              <td>
+                ORDER
+              </td>
+              <td>
+                ITEMS 
+              </td>
+              <td>
+                DATE
+              </td>
+              <td>
+                AMOUNT
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Order id:
+                1
+              </td>
+              <td>
+                1
+                 
+                items
+              </td>
+              <td>
+                Sun Mar 07 2021
+              </td>
+              <td>
+                700
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </header>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

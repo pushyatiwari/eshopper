@@ -8,6 +8,6 @@ const Cart = ({ description }) => (
 );
 
 Cart.propTypes = {
-  description: PropTypes.shape(PropTypes.any).isRequired,
+  description: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 export default Cart;

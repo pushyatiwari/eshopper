@@ -1,85 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar should be called with 1`] = `
+exports[`Product should render Product Details 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header
-        class="whiteTheme header"
+      <div
+        class="productContainer"
+        data-testid="product"
       >
-        <a
-          class="e-shopper"
-          href="/"
+        <div
+          class="product"
+        >
+          <p />
+          <img
+            alt="product"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRhOqYV2NWv0m80WzwGG2fCz6c3PzHmpz1Dg&usqp=CAU"
+          />
+          <p
+            class="productDescription"
+          >
+            melon
+          </p>
+          <p
+            class="productDescription"
+          >
+            1 kg
+          </p>
+        </div>
+        <div
+          class="description"
         >
           <p>
-            E-shopper
+            MRP:
+            40
           </p>
-        </a>
-        <div
-          class="nav-order-details"
-        >
-          <a
-            href="/allorders"
+          <div
+            class="basketItems"
           >
             <button
-              class="nav-buttons"
+              type="button"
             >
-              All Orders
+              -
             </button>
-          </a>
-          <a
-            data-testid="cart-test-nav"
-            href="/cart"
-          >
             <button
-              class="whiteTheme nav-buttons"
+              type="button"
             >
-              My Basket :
-              2
+              +
             </button>
-          </a>
+          </div>
         </div>
-      </header>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <header
-      class="whiteTheme header"
+    <div
+      class="productContainer"
+      data-testid="product"
     >
-      <a
-        class="e-shopper"
-        href="/"
+      <div
+        class="product"
+      >
+        <p />
+        <img
+          alt="product"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRhOqYV2NWv0m80WzwGG2fCz6c3PzHmpz1Dg&usqp=CAU"
+        />
+        <p
+          class="productDescription"
+        >
+          melon
+        </p>
+        <p
+          class="productDescription"
+        >
+          1 kg
+        </p>
+      </div>
+      <div
+        class="description"
       >
         <p>
-          E-shopper
+          MRP:
+          40
         </p>
-      </a>
-      <div
-        class="nav-order-details"
-      >
-        <a
-          href="/allorders"
+        <div
+          class="basketItems"
         >
           <button
-            class="nav-buttons"
+            type="button"
           >
-            All Orders
+            -
           </button>
-        </a>
-        <a
-          data-testid="cart-test-nav"
-          href="/cart"
-        >
           <button
-            class="whiteTheme nav-buttons"
+            type="button"
           >
-            My Basket :
-            2
+            +
           </button>
-        </a>
+        </div>
       </div>
-    </header>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

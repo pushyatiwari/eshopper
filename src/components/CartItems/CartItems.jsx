@@ -12,8 +12,8 @@ const cart = (description) => {
       if (product.countInCart > 0) {
         const subTotal = product.price * product.countInCart;
         newArray.push((
-          <>
-            <tr key={product.id}>
+          <React.Fragment key={product.id}>
+            <tr>
               <td>{product.name}</td>
               <td>
                 Rs.
@@ -22,7 +22,7 @@ const cart = (description) => {
               <td>{product.countInCart}</td>
               <td>{subTotal}</td>
             </tr>
-          </>
+          </React.Fragment>
         ));
       }
     })));
@@ -105,6 +105,6 @@ const CartItems = ({ description }) => {
 // desc:{"Fruits & Vegatables":[{"id":1,"name":"apple","price":120,"count":18,"category":"Fruits & Vegatables","countInCart":2,"src":"https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"},
 
 CartItems.propTypes = {
-  description: PropTypes.shape(PropTypes.any).isRequired,
+  description: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 export default CartItems;

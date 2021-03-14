@@ -24,4 +24,8 @@ describe(OrderDetails.name, () => {
     const navbarElement = screen.getByText('ITEMS');
     expect(navbarElement.tagName).toBe('TD');
   });
+  test('should render Order Details', async () => {
+    const renderOrder = render(<OrderDetails orders={mockOrders} />);
+    expect(renderOrder).toMatchSnapshot();
+  });
 });

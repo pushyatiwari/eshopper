@@ -6,7 +6,7 @@ import Product from './Product';
 
 describe(Product.name, () => {
   const description = {
-    id: 'b2',
+    id: 1,
     name: 'melon',
     price: 40,
     count: 0,
@@ -30,5 +30,13 @@ describe(Product.name, () => {
     />);
     const productElement = screen.getByText('1 kg');
     expect(productElement.tagName).toBe('P');
+  });
+  test('should render Product Details', async () => {
+    const renderProduct = render(<Product
+      description={description}
+      onIncrement={() => 'increment'}
+      onDecrement={() => 'decrement'}
+    />);
+    expect(renderProduct).toMatchSnapshot();
   });
 });

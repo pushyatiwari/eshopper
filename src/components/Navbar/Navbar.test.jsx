@@ -37,7 +37,7 @@ describe(Navbar.name, () => {
         />
       </BrowserRouter>,
     );
-    const cart = screen.getByTestId('cart-test');
+    const cart = screen.getByTestId('cart-test-nav');
     fireEvent.click(cart);
     expect(document.location.href).toBe('http://localhost/cart');
   });
