@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart should be called with 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="cartitem-container"
+      >
+        <span
+          class="basket-item"
+        >
+          YOUR BASKET (
+          1 
+          items)
+        </span>
+        <div
+          class="basket-container"
+        >
+          <div
+            class="upper-container"
+          >
+            <table>
+              <tbody>
+                <tr
+                  class="cartitems-header"
+                >
+                  <td>
+                    ITEM DESCRIPTION
+                  </td>
+                  <td>
+                    UNIT PRICE
+                  </td>
+                  <td>
+                    QUANTITY
+                  </td>
+                  <td>
+                    SUBTOTAL
+                  </td>
+                </tr>
+                <tr
+                  class="cartitem-category"
+                >
+                  <td>
+                    Fruits and Vegatables
+                  </td>
+                  <td />
+                  <td />
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    apple
+                  </td>
+                  <td>
+                    Rs.
+                    120
+                  </td>
+                  <td>
+                    2
+                  </td>
+                  <td>
+                    240
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="bottom-part"
+          >
+            <a
+              href="/"
+            >
+              <button
+                class="continue-shopping"
+                type="button"
+              >
+                CONTINUE SHOPPING
+              </button>
+            </a>
+            <div
+              class="cartitem-display-total"
+            >
+              <div>
+                TOTAL
+                 undefined
+              </div>
+              <hr />
+              <div>
+                <a
+                  href="/checkout"
+                >
+                  <button
+                    id="checkout"
+                    type="button"
+                  >
+                    CHECKOUT
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="cartitem-container"
+    >
+      <span
+        class="basket-item"
+      >
+        YOUR BASKET (
+        1 
+        items)
+      </span>
+      <div
+        class="basket-container"
+      >
+        <div
+          class="upper-container"
+        >
+          <table>
+            <tbody>
+              <tr
+                class="cartitems-header"
+              >
+                <td>
+                  ITEM DESCRIPTION
+                </td>
+                <td>
+                  UNIT PRICE
+                </td>
+                <td>
+                  QUANTITY
+                </td>
+                <td>
+                  SUBTOTAL
+                </td>
+              </tr>
+              <tr
+                class="cartitem-category"
+              >
+                <td>
+                  Fruits and Vegatables
+                </td>
+                <td />
+                <td />
+                <td />
+              </tr>
+              <tr>
+                <td>
+                  apple
+                </td>
+                <td>
+                  Rs.
+                  120
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  240
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="bottom-part"
+        >
+          <a
+            href="/"
+          >
+            <button
+              class="continue-shopping"
+              type="button"
+            >
+              CONTINUE SHOPPING
+            </button>
+          </a>
+          <div
+            class="cartitem-display-total"
+          >
+            <div>
+              TOTAL
+               undefined
+            </div>
+            <hr />
+            <div>
+              <a
+                href="/checkout"
+              >
+                <button
+                  id="checkout"
+                  type="button"
+                >
+                  CHECKOUT
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -19,6 +20,13 @@
         "react"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [
+            "error",
+            { "extensions": [".jsx", ".js"]}
+        ],
+        "import/prefer-default-export": "off"
     }
+    // "rules": {
+    //     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    // }
 }

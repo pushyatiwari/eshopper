@@ -1,0 +1,112 @@
+table{
+     border: 1rem solid black;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+}
+.basket-item{
+    margin-top: 2rem;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.cartitems-header{
+    background-color: rgb(77, 68, 68);
+    color: white;
+}
+td {
+    /* width: 350px; */
+    width: 30rem;
+}
+.upper-container{
+    margin: 1rem;
+    height: 20rem;
+}
+.cartitem-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.basket-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem;
+}
+.cartitem-category{
+background-color: rgb(221, 213, 213);
+}
+/* .cartitem-display-total {
+    background-color: rgb(228, 227, 227);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-color: white;
+    box-shadow: 0 2px 6px 0 rgba(208, 211, 205, 0.2);
+    height: 80px;
+    width: 200px;
+    padding: 50px;
+    margin-top: 100px;
+    margin-left: 1000px;
+   justify-content: space-between;
+} */
+
+.cartitem-display-total{
+    height: 10rem;
+    width: 16rem;
+    display: flex;
+    border: 1px solid black;
+    background-color: rgb(228, 227, 227);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 rgba(174, 175, 172, 0.2);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+hr{
+    width: 1rem;
+}
+#checkout{
+    background-color: rgb(238, 184, 37);
+    height: 2rem;
+    width: 15rem;
+    border-radius: 10px;
+    border-color: rgb(228, 227, 227);
+    box-shadow: 0 2px 6px 0 rgba(208, 211, 205, 0.2);
+    color: rgb(63, 61, 61);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.continue-shopping{
+    background-color: rgb(207, 207, 207);
+    border-radius: 10px;
+    border-color: rgb(228, 227, 227);
+    box-shadow: 0 2px 6px 0 rgba(208, 211, 205, 0.2);
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: medium;   
+}
+
+.bottom-part{
+    display: flex;
+    margin-top: 30%;
+    justify-content:space-between;
+}
+
+@media only screen and (max-width: 600px) {
+    #checkout{
+    height: 2rem;
+    width: 7rem;
+    }
+    .cartitem-display-total{
+    height: 5rem;
+    width: 10rem;
+    }
+  }

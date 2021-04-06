@@ -1,0 +1,34 @@
+@import '../../styles//index.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(70, 77, 77);
+    text-decoration: none;
+    color: white;
+}
+
+.nav-order-details{
+    display: flex;
+    align-content: flex-end;
+    color: white;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.nav-buttons{
+    color: white;
+    text-decoration: none;
+    background-color: transparent;  
+}
+.e-shopper{
+    text-decoration: none;
+    color: white;
+}
+
+.whiteTheme{
+    background-color: $theme-color-dark;
+  }
+  
+  .darkTheme{
+    background-color:$theme-color-light;
+  }

@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<div>
+  <header
+    class="whiteTheme header"
+  >
+    <a
+      class="e-shopper"
+      href="/"
+    >
+      <p>
+        E-shopper
+      </p>
+    </a>
+    <div
+      class="nav-order-details"
+    >
+      <a
+        href="/allorders"
+      >
+        <button
+          class="nav-buttons"
+        >
+          All Orders
+        </button>
+      </a>
+      <a
+        data-testid="cart-test-nav"
+        href="/cart"
+      >
+        <button
+          class="whiteTheme nav-buttons"
+        >
+          My Basket :
+          0
+        </button>
+      </a>
+    </div>
+  </header>
+  <button
+    type="button"
+  >
+    Change Theme
+  </button>
+  <div
+    class="container"
+  >
+    <div
+      class="whiteTheme container"
+      data-testid="home-route"
+    >
+      <div
+        class="rendercards"
+      >
+        <div
+          class="productContainer"
+          data-testid="product"
+        >
+          <div
+            class="product"
+          >
+            <p>
+              Fruits & Vegatables
+            </p>
+            <img
+              alt="product"
+              src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            />
+            <p
+              class="productDescription"
+            >
+              apple
+            </p>
+            <p
+              class="productDescription"
+            >
+              1 kg
+            </p>
+          </div>
+          <div
+            class="description"
+          >
+            <p>
+              MRP:
+              120
+            </p>
+            <div
+              class="basketItems"
+            >
+              <button
+                type="button"
+              >
+                -
+              </button>
+              0
+              <button
+                type="button"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
